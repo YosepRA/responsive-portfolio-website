@@ -1,3 +1,5 @@
+$portrait: url('../img/portrait.png');
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -29,5 +31,106 @@
         transform: rotate(-45deg) translate(5px, -5px);
       }
     }
+  }
+}
+
+// Menu Navigation
+.menu {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+  // These are a shorthand to "chain" the selection name.
+  // Both of these will result according to its parent selection name.
+  // ".menu-branding" and ".menu-nav"
+  &-branding,
+  &-nav {
+    display: flex;
+    // "flex-flow" is a shorthand for "flex-direction" and "flex-wrap".
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    // Flex are applied to both menu-branding and menu-nav, not its container which is ".menu"
+    // They are still a block element, and block elements can't stand side by side normally.
+    // So we have to float it up so the next block get pushed up to fill that float gap.
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    list-style: none;
+    background: darken($color: $primary-color, $amount: 5);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut();
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
+      transform: translate3d(600px, 0, 0);
+      @include easeOut();
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 2.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+    padding: 0.5rem 0px;
+    @include easeOut();
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &-branding {
+    background: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut();
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+      // "bg-size" may only be included immediately after "position" separated by "/".
+      // Otherwise, it won't work.
+      background: $portrait 40% 40%/280px auto;
+    }
+  }
+}
+
+// This is SASS loop.
+// Delay each nav-items slide to 0.1.
+@for $x from 1 through 4 {
+  // Parameters must be wrapped in "#{}".
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: 100ms * $x;
   }
 }
