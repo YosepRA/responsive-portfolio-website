@@ -24,10 +24,6 @@ h3 {
     font-size: 6rem;
   }
 
-  .text-secondary {
-    color: $secondary_color;
-  }
-
   &.sm-heading {
     padding: 0.2rem 1rem;
     margin-bottom: 2rem;
@@ -144,6 +140,36 @@ main {
     }
     // =======================================
   }
+
+  // Contact Page
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
+    // @include easeOut();
+
+    div {
+      border: 1px solid white;
+      margin: 2rem;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      @include easeOut();
+
+      &:hover {
+        background: $secondary-color;
+        color: setTextColor($secondary-color);
+
+        .text-secondary {
+          color: setTextColor($secondary-color);
+        }
+      }
+    }
+  }
+}
+
+.text-secondary {
+  color: $secondary_color;
 }
 
 .btn {
@@ -152,6 +178,7 @@ main {
   padding: 0.7rem 1rem;
   text-align: center;
   margin-bottom: 0.3rem;
+  @include easeOut();
 
   &:hover {
     background: $secondary-color;

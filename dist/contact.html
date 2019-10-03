@@ -4,11 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+      rel="stylesheet"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Contact</title>
   </head>
   <body>
-    <h1>The page is under construction</h1>
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
 
-    <a href="index.html">Go back to Home</a>
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a href="work.html" class="nav-link">My Work</a>
+          </li>
+          <li class="nav-item current">
+            <a href="contact.html" class="nav-link">How to reach me</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contact">
+      <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
+      <h2 class="sm-heading">
+        This is how you can reach me
+      </h2>
+
+      <section class="boxes">
+        <div class="box-email">
+          <span class="text-secondary">
+            Email:
+          </span>
+          johndoe@test.com
+        </div>
+        <div class="box-phone">
+          <span class="text-secondary">
+            Phone:
+          </span>
+          (555) 555 5555
+        </div>
+        <div class="box-address">
+          <span class="text-secondary">
+            Address:
+          </span>
+          50 Main st, California
+        </div>
+      </section>
+    </main>
+
+    <footer id="main-footer">Copyright &copy; 2019</footer>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
