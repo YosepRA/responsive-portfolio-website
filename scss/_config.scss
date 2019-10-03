@@ -1,4 +1,4 @@
-$primary_color: #333;
+$primary_color: #444;
 $secondary_color: #eece1a;
 $show-home-image: true;
 $home-image: url(../img/background02.jpg);
@@ -17,7 +17,7 @@ $background-opacity: 0.7;
 
       &::before {
         content: '';
-        position: absolute;
+        position: fixed;
         top: 0px;
         right: 0px;
         width: 100%;
@@ -26,6 +26,15 @@ $background-opacity: 0.7;
         background: rgba($primary_color, $background-opacity);
       }
     }
+  }
+}
+
+// Set text color.
+@function setTextColor($color) {
+  @if (lightness($color) > 40) {
+    @return black;
+  } @else {
+    @return white;
   }
 }
 

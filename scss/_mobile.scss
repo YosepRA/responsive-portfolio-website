@@ -5,12 +5,39 @@
 
 @include mediaMd {
   main {
-    text-align: center;
     align-items: center;
+
+    &#home {
+      text-align: center;
+    }
+
+    &#about {
+      h1,
+      h2,
+      h3,
+      h6 {
+        text-align: center;
+      }
+    }
 
     .lg-heading {
       margin-bottom: 1rem;
       line-height: 1em;
+    }
+
+    .about-info {
+      grid-template-areas:
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+      grid-template-columns: 1fr;
+
+      .bio,
+      .job {
+        padding: 1rem 2rem;
+      }
     }
   }
 
@@ -48,7 +75,9 @@
 }
 
 @include mediaSm {
-  main#home .lg-heading {
-    margin-top: 15vh;
+  main {
+    .lg-heading {
+      font-size: 4rem;
+    }
   }
 }
